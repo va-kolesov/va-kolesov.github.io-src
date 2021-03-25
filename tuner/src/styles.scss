@@ -1,0 +1,268 @@
+@import 'variables.scss';
+
+* {
+    margin: 0;
+    cursor: default;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: $color_dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Logo {
+    font-family: $font-family_logo;
+    font-size: 100px;
+    color: $color-elements;
+}
+
+.Container {
+    background: $color_main;
+    height: 600px;
+    width: 600px;
+    border-radius: 80px;
+    overflow: hidden;
+    box-shadow: (-$shadow-shift*2) (-$shadow-shift*2) ($shadow-blur) ($shadow-size*2) rgba(255, 255, 255, 0.5), 
+                ($shadow-shift*2) ($shadow-shift*2) ($shadow-blur) ($shadow-size*2) rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column;
+}
+
+.Header {
+    background: $color_light;
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-shadow: (-$shadow-shift*2) (-$shadow-shift*2) ($shadow-blur) ($shadow-size*2) rgba(255, 255, 255, 0.5), 
+                ($shadow-shift*2) ($shadow-shift*2) ($shadow-blur) ($shadow-size*2) rgba(0, 0, 0, 0.5); 
+
+}
+
+.Tuner {
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.ButtonBase {
+    height: $size_button;
+    border-radius: $size_button / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-family: $font-family_main;
+    font-weight: normal;
+    font-size: $font-size_elements;
+    box-shadow: (-$shadow-shift) (-$shadow-shift) ($shadow-blur) ($shadow-size) rgba(255, 255, 255, 0.5), 
+                ($shadow-shift) ($shadow-shift) ($shadow-blur) ($shadow-size) rgba(0, 0, 0, 0.5); 
+}
+
+.clickable,
+.clickable * {
+    cursor: pointer;
+}
+.clickable:hover {
+    background: $color_hover;
+}
+
+.placehodler {
+    height: 100%;
+    width: $size_button;
+}
+.NoteButtons {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.Button {
+    width: $size_button;
+}
+
+.EditButton {
+    width: $size_button;
+}
+
+.MenuButton {
+    width: $width_menu_button;
+}
+
+
+.TopContent {
+    padding: 10px 30px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: row;
+    height: $size_button;
+    z-index: 2;
+    justify-content: space-between;
+}
+
+.Menu {
+    width: $width_menu_button;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: $size_button / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-family: $font-family_main;
+    font-weight: normal;
+    font-size: 30px;
+    box-shadow: (-$shadow-shift) (-$shadow-shift) ($shadow-blur) ($shadow-size) rgba(255, 255, 255, 0.5), 
+                ($shadow-shift) ($shadow-shift) ($shadow-blur) ($shadow-size) rgba(0, 0, 0, 0.5); 
+}
+.MenuContainer {
+    position: relative;
+    width: $width_menu_button;
+}
+
+.NoteChooser {
+    width: $width_menu_button;
+    position: absolute;
+    flex-direction: column; 
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: $size_button / 2;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-family: $font-family_main;
+    font-weight: normal;
+    font-size: $font-size_elements;
+    box-shadow: (-$shadow-shift) (-$shadow-shift) ($shadow-blur) ($shadow-size) rgba(255, 255, 255, 0.5), 
+                ($shadow-shift) ($shadow-shift) ($shadow-blur) ($shadow-size) rgba(0, 0, 0, 0.5); 
+}
+
+.border {
+  border-top: $color_dark solid 1px;
+}
+
+.MenuItem {
+    width: 100%;
+    height: $size_button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button-wrong {
+    background: $color_red;
+}
+.Button-right {
+    background: $color-green;
+}
+.Button-default {
+    background: $color-elements;
+}
+
+.Icon {
+    height: 30px;
+    fill: $color_white;
+}
+
+.Scale {
+    width: 400px;
+    height: 400px;
+    border-radius: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.Scale_content {
+    width: 760px;
+    height: 760px;
+    border-radius: 380px;
+    border: 2px solid;
+    margin-left: -180px;
+    margin-top: 60px;
+    transform-origin: center;
+    flex-shrink: 0;
+}
+.Scale_tick {
+    height: 60px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.Scale_tick svg {
+    width: 40px;
+}
+.Scale_elem-big {
+    font-size: 40px;
+}
+.Scale_elem-small {
+    font-size: 28px;
+}
+.Scale_elem {
+    height: 370px;
+    position: absolute;
+    font-family: $font-family_main;
+    left: 200px;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    width: 1px;
+    transform-origin: bottom center;
+}
+.Scale_elem.r-3 {
+    transform: translate(180px, -60px) rotate(-3 * $rotate_angle_scale);
+}
+.Scale_elem.r-2 {
+    transform: translate(180px, -60px) rotate(-2 * $rotate_angle_scale);
+}
+.Scale_elem.r-1 {
+    transform: translate(180px, -60px) rotate(-$rotate_angle_scale);
+}
+.Scale_elem.r0 {
+    transform: translate(180px, -60px) rotate(0);
+}
+.Scale_elem.r1 {
+    transform: translate(180px, -60px) rotate( $rotate_angle_scale);
+}
+.Scale_elem.r2 {
+    transform: translate(180px, -60px) rotate(2 * $rotate_angle_scale);
+}
+.Scale_elem.r3 {
+    transform: translate(180px, -60px) rotate(3 * $rotate_angle_scale);
+}
+.Scale_hint {
+    font-family: $font-family_main;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.Scale_hint_note {
+    font-size: 50px;
+}
+.Scale_hint_note {
+    font-size: 50px;
+}
