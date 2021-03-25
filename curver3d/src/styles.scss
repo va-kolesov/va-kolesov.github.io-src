@@ -1,0 +1,20 @@
+@import 'variables.scss';
+
+* {
+    margin: 0;
+    cursor: default;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: $color_dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family_main;
+}
